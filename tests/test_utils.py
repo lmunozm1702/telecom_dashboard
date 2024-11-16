@@ -28,3 +28,13 @@ def test_save_xls_sheets_to_parquet():
   sheet_list = utils.get_xls_sheets_list('/data_files/test.xlsx')
   utils.save_xls_sheets_to_parquet( sheet_list, '/data_files/test.xlsx', '/data_files')
   assert os.path.exists(ROOT_DIR + '/data_files/ingresos_.parquet')  
+
+def test_get_xls_sheet_data():
+  '''
+  Test the get_xls_sheet_data function
+  '''
+  df = utils.get_xls_sheet_data('/data_files/test.xlsx', 'Ingresos ')
+  print(df.shape)
+  assert ((df.shape[0] == 10) & (df.shape[1] == 1))
+
+
