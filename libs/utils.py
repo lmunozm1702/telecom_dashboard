@@ -44,3 +44,18 @@ def normalize_file_name(file_name):
   str: normalized file name
   '''
   return unidecode(file_name.replace(' ', '_').replace('-', '_').lower())
+
+def get_xls_sheet_data(xls_file, sheet_name):
+  '''
+  Get the data from a sheet of an Excel file
+
+  Parameters
+  ----------
+  xls_file: path to the Excel file
+  sheet_name: name of the sheet
+
+  Returns
+  -------
+  pd.DataFrame: data from the sheet
+  '''
+  return pd.read_excel(ROOT_DIR + xls_file, sheet_name=sheet_name)
