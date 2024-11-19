@@ -38,4 +38,22 @@ with cols[2]:
 
 #st.dataframe(df_quarters, use_container_width=True)
 #st.dataframe(df_provinces, use_container_width=True)
+st.markdown("---")
+cols = st.columns(3, vertical_alignment='bottom')
+with cols[0]:
+  st.subheader('Análisis trimestral')
+  fig = px.line(df_quarters, x="Periodo", y="Ingresos (miles de pesos)", title="Ingresos por trimestre")
+  st.plotly_chart(fig, use_container_width=True)
+with cols[1]:
+  #st.subheader('Accesos por trimestre')
+  fig = px.line(df_quarters, x="Periodo", y="Accesos por cada 100 hogares", title="Accesos totales por trimestre")  
+  st.plotly_chart(fig, use_container_width=True)
+with cols[2]:
+  #st.subheader('Accesos por tecnología')
+  tech_list = ['ADSL', 'Cablemodem', 'Fibra óptica', 'Wireless', 'Otros']
+  sel_tech = st.selectbox('Tecnología', tech_list)
+
+  fig = px.line(df_quarters[['Periodo', sel_tech]], x="Periodo", y=sel_tech, title="Accesos por tecnología por trimestre")
+  fig.update_layout(yaxis_title='Accesos')
+  st.plotly_chart(fig, use_container_width=True)
 
