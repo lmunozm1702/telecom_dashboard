@@ -59,3 +59,17 @@ def get_xls_sheet_data(xls_file, sheet_name):
   pd.DataFrame: data from the sheet
   '''
   return pd.read_excel(ROOT_DIR + xls_file, sheet_name=sheet_name)
+
+def get_parquet_file_data(parquet_file):
+  '''
+  Get the data from a parquet file
+
+  Parameters
+  ----------
+  parquet_file: path to the parquet file
+
+  Returns
+  -------
+  pd.DataFrame: data from the parquet file
+  '''
+  return pd.read_parquet(ROOT_DIR + parquet_file)
