@@ -101,7 +101,7 @@ htbuilder==0.7.0
 hvplot==0.10.0
 hyperlink==21.0.0
 idna==3.7
-imagecodecs==2023.1.23
+imagecodecs
 imageio==2.33.1
 imagesize==1.4.1
 imbalanced-learn==0.12.3
@@ -256,7 +256,7 @@ python-lsp-black==2.0.0
 python-lsp-jsonrpc==1.1.2
 python-lsp-server==1.10.0
 python-slugify==5.0.2
-python-snappy==0.6.1
+python-snappy
 pytoolconfig==1.2.6
 pytz==2024.1
 pyviz_comms==3.0.2
