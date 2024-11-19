@@ -5,7 +5,7 @@ def dashboard_title():
   Prints the title of the streamlit dashboard
   '''
   st.set_page_config(layout="wide", page_title='Telecom Dashboard - Internet Channel', page_icon=':chart_with_upwards_trend:')
-  st.subheader(':bar_chart: Panel de Control - Canal Internet')
+  #st.subheader(':bar_chart: Panel de Control - Canal Internet')
   #st.markdown('---')
   
 def get_income_kpi(df):
